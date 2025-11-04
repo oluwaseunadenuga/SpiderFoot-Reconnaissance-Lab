@@ -1,5 +1,4 @@
-# APT breach: Analysing the impact on information security
-
+# APT Breach: Analysing the impact on information security
 <img width="1152" height="768" alt="image" src="https://github.com/user-attachments/assets/9abe98ec-8829-4c61-b6b5-30315450ae0d" />
 
 ## INTRODUCTION
@@ -41,8 +40,8 @@ A leading tech corporation client experienced a sophisticated cyberattack by the
 
 ## MITRE ATT&CK Framework (https://attack.mitre.org/)
 This is a widely used tool for categorising and identifying cyber threats.
-- **Cybersecurity and Infrastructure Security Agency (CISA): https://www.cisa.gov**
-- **US-CERT: https://www.us-cert.gov/**
+- Cybersecurity and Infrastructure Security Agency (CISA): https://www.cisa.gov
+- US-CERT: https://www.us-cert.gov
 
 # Comprehensive Cybersecurity Assessment: APT34 (OilRig)
 
