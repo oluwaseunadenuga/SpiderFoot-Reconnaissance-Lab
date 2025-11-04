@@ -8,11 +8,11 @@ This project focuses on investigating a cyberattack by APT34 and producing a com
 <img width="1000" height="750" alt="image" src="https://github.com/user-attachments/assets/93c86d1d-d95b-489a-88bc-55bf745eb839" />
 
 ## PROBLEM STATEMENT
-A leading tech corporation client experienced a sophisticated cyberattack by a notorious Advanced Persistent Threat (APT) group known as APT34. The attack, believed to be sponsored by a foreign government, has left the organisation's network compromised and valuable customer data and intellectual property have been stolen.
+A leading tech corporation client experienced a sophisticated cyberattack by the notorious Advanced Persistent Threat (APT) group APT34. The attack, believed to be sponsored by a foreign government, has left the organisation's network compromised and valuable customer data and intellectual property have been stolen.
 
 ## OBJECTIVES
-- Conduct an initial investigation into APT34 and evaluate the potential impact of the attack on the organisation:**.
-- **Produce a comprehensive report documenting my findings and outlining key recommendations to improve the organisation's cybersecurity posture:**
+- Conduct an initial investigation into APT34 and evaluate the potential impact of the attack on the organisation.
+- Produce a comprehensive report documenting my findings and outlining key recommendations to improve the organisation's cybersecurity posture.
 
 ## TASKS
 - **Utilise various Open-source Intelligence(OSINT)tools and techniques to gather information on APT34**
@@ -41,18 +41,18 @@ A leading tech corporation client experienced a sophisticated cyberattack by a n
 
 ## MITRE ATT&CK Framework (https://attack.mitre.org/)
 This is a widely used tool for categorising and identifying cyber threats.
-- **Cybersecurity and Infrastructure Security Agency (CISA): https://www.cisa.gov**/**
+- **Cybersecurity and Infrastructure Security Agency (CISA): https://www.cisa.gov**
 - **US-CERT: https://www.us-cert.gov/**
 
 # Comprehensive Cybersecurity Assessment: APT34 (OilRig)
 
 ## Executive Summary
-This report provides actionable insights into APT34 (OilRig), an advanced persistent threat (APT) group linked to Iran. The findings outline the group's history, tactics, targets, and motivations, along with a comprehensive defense strategy. The goal is to enhance the client’s security posture and mitigate risks associated with APT34 attacks.
+This report provides actionable insights into APT34 (OilRig), an advanced persistent threat (APT) group linked to Iran. The findings outline the group's history, tactics, targets and motivations, along with a comprehensive defense strategy. The goal is to enhance the client’s security posture and mitigate risks associated with APT34 attacks.
 
 ## 1.0 Overview of APT34
 **History**
 
-APT34 has been active since at least 2014, conducting cyber-espionage campaigns that primarily target organisations in the Middle East and occasionally in other regions.  Known for its sophisticated and persistent attacks, APT34 uses custom malware, phishing and web shells to achieve its objectives.**
+APT34 has been active since at least 2014, conducting cyber-espionage campaigns that primarily target organisations in the Middle East and occasionally in other regions. Known for its sophisticated and persistent attacks, APT34 uses custom malware, phishing and web shells to achieve its objectives.
 
 ## Nation/State Association
 APT34 is widely attributed to Iran, with operations aligning closely with the nation’s strategic and geopolitical goals.
@@ -75,7 +75,7 @@ APT34’s primary motive is espionage. The group seeks to collect:
 ## 2.0 APT34 Tactics, Techniques and Procedures (TTPs)
 **Using the MITRE ATT&CK Framework, APT34’s TTPs include:**
 
-   ** **Tactic/****              **Techniques**
+   ** **Tactic/**            **Techniques**
 - **Initial Access:          Spear-phishing links (T1566.001), exploiting public-facing applications (T1190)**
 - **Execution:	              PowerShell scripting (T1059.001), execution of malicious payload(T1203)**.
 - **Persistence:	            Web shells (T1505.003), account manipulation (T1098)**.
