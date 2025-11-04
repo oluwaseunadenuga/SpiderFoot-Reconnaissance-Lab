@@ -25,8 +25,7 @@ A leading tech corporation client experienced a sophisticated cyberattack by the
 - What security measures could the client implement to defend against cyberattacks conducted by this APT?
 
 ## OSINT TOOLS
-
-**OSINT tools used to gather information on APT34:**
+OSINT tools used to gather information on APT34
 - Mandiant Security Blog: https://www.mandiant.com/resources/blog
 - CrowdStrike: https://www.crowdstrike.com 
 - Recorded Future: https://www.recordedfuture.com
