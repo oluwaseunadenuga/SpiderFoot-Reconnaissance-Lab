@@ -1,6 +1,8 @@
 ## Vulnerability Assessment using Nessus Essentials
 ## Overview
+
 This project showcases hands-on vulnerability assessment skills using Nessus Essentials to identify, analyse and prioritise security weaknesses on a lab network host. 
+
 The engagement covers end-to-end activities:
 - Defining scope
 - Configuring a scan policy
@@ -42,9 +44,9 @@ Supporting screenshots in the repository illustrate:
 
 3. Choose the **Basic Network Scan** template (most appropriate for initial unauthenticated discovery).
 
-4. **Run scan and monitor execution**  
+4. **Run scan and monitor execution**
  - Launched scan → monitored real-time progress in the Nessus dashboard.
-  - Verify that the scan completes successfully and that results are populated (hosts discovered, vulnerabilities found).
+ - Verify that the scan completes successfully and that results are populated (hosts discovered, vulnerabilities found).
 
 <img width="940" height="496" alt="image" src="https://github.com/user-attachments/assets/932a4f63-f37c-4409-8441-f134f318095e" />
 <img width="940" height="503" alt="image" src="https://github.com/user-attachments/assets/3b1de789-2703-42a3-a1c2-b1ab1b5986a1" />
