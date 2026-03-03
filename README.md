@@ -1,7 +1,7 @@
 ## Vulnerability Assessment using Nessus Essentials
 ## Overview
 This project showcases hands-on vulnerability assessment skills using Nessus Essentials to identify, analyse and prioritize security weaknesses on a lab network host. 
-The engagement covers end-to-end activities: #
+The engagement covers end-to-end activities:
 - Defining scope
 - Configuring a scan policy
 - executing a basic network scan
@@ -16,8 +16,6 @@ All activities were performed in an isolated lab environment.
 - **Scan Type**: Basic Network Scan (unauthenticated)
 - **In scope**: Network-reachable services, open ports, known CVEs, misconfigurations
 - **Out of scope**: Web application logic testing, authenticated/credentialed scans, production systems, authenticated scans, web application testing, production systems
-
-- The goal of this lab is to simulate how a security analyst would perform an initial 
 
 <img width="940" height="363" alt="image" src="https://github.com/user-attachments/assets/0c888ab3-9da2-446a-82d5-dabba92ecd86" />
 
