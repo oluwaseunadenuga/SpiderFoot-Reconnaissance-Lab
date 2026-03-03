@@ -35,9 +35,10 @@ All activities were performed in an isolated lab environment.
 - Performance and discovery options appropriate for a lab environment.
 
 Supporting screenshots in the repository illustrate:
-•	The scan template selection screen (Basic Network Scan vs Advanced and Web Application scans).
-•	The target configuration page showing the defined scope.
-•	The detailed configuration tabs (General, Discovery, Port Scanning). 
+
+- The scan template selection screen (Basic Network Scan vs Advanced and Web Application scans).
+- The target configuration page showing the defined scope.
+- The detailed configuration tabs (General, Discovery, Port Scanning). 
 
  <img width="940" height="389" alt="image" src="https://github.com/user-attachments/assets/fe2d5926-4f10-48d3-a892-b3f12d3fd43b" />
  <img width="940" height="383" alt="image" src="https://github.com/user-attachments/assets/f6b91489-627a-4546-b3e4-7f2f452eb086" />
