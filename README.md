@@ -88,7 +88,4 @@ These outputs simulate handover to an internal IT/security operations team.
 - Communicating findings and next steps to remediation teams. The prioritised vulnerabilities report was summarised and sent to the Remediation IT team for patching and resolution.
 
 ## Disclaimer
-Performed **exclusively in a private lab environment** using Metasploitable 2 (a legal, purpose-built vulnerable target). No production systems, live networks, or unauthorised assets were involved.
-Screenshots are included directly from the lab walkthrough for transparency and portfolio review.
-Feel free to contact me for questions/collaboration.
-Last updated: February 2026
+This project was performed in a controlled lab environment and is intended for educational and portfolio purposes only. No production systems or real-world customer data were scanned or impacted during this exercise.
