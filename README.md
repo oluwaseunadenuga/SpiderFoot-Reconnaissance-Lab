@@ -71,10 +71,11 @@ Supporting screenshots in the repository illustrate:
 ## Remediation Handoff & Key Takeaways
 - Final deliverable included:
 - Recommended remediation steps for critical/high items
+
 These outputs simulate handover to an internal IT/security operations team.
-•	Patch vulnerable services.
-•	Harden configurations.
-•	Disable unnecessary or legacy protocols.
+-	Patch vulnerable services.
+-	Harden configurations.
+-	Disable unnecessary or legacy protocols.
 
 
 ## Skills Demonstrated
