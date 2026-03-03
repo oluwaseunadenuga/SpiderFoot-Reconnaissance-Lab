@@ -22,15 +22,15 @@ All activities were performed in an isolated lab environment.
 ## Methodology
 
 1. **Define scope and objectives**  
-   Confirm target IP/hostname and that only the lab host is in scope.
-   Agree that the objective is to identify network-level vulnerabilities and misconfigurations
+- Confirm target IP/hostname and that only the lab host is in scope.
+- Agree that the objective is to identify network-level vulnerabilities and misconfigurations
 
-2. **Select and configure scan type**  
-   Create a new Basic Network Scan in Nessus Essentials.
-   Configure:
-   General settings (name, description, target IP(s))
-   Port scanning (default port range, service discovery)
-   Performance and discovery options appropriate for a lab environment.
+3. **Select and configure scan type**  
+- Create a new Basic Network Scan in Nessus Essentials.
+- Configure:
+- General settings (name, description, target IP(s))
+- Port scanning (default port range, service discovery)
+- Performance and discovery options appropriate for a lab environment.
 
 Supporting screenshots in the repository illustrate:
 •	The scan template selection screen (Basic Network Scan vs Advanced and Web Application scans).
@@ -43,8 +43,8 @@ Supporting screenshots in the repository illustrate:
 3. Choose the **Basic Network Scan** template (most appropriate for initial unauthenticated discovery).
 
 4. **Run scan and monitor execution**  
- Launched scan → monitored real-time progress in the Nessus dashboard.
-  Verify that the scan completes successfully and that results are populated (hosts discovered, vulnerabilities found).
+ - Launched scan → monitored real-time progress in the Nessus dashboard.
+  - Verify that the scan completes successfully and that results are populated (hosts discovered, vulnerabilities found).
 
 <img width="940" height="496" alt="image" src="https://github.com/user-attachments/assets/932a4f63-f37c-4409-8441-f134f318095e" />
 <img width="940" height="503" alt="image" src="https://github.com/user-attachments/assets/3b1de789-2703-42a3-a1c2-b1ab1b5986a1" />
@@ -62,9 +62,9 @@ Supporting screenshots in the repository illustrate:
 <img width="940" height="407" alt="image" src="https://github.com/user-attachments/assets/cdbfeb0b-1d13-408a-afc1-9cc45e8598a3" />
 
 6. **Prioritise vulnerabilities and prepare a report**  
-   Group findings by severity and potential business impact.
-   Highlight critical and high-severity issues first (e.g., remote code execution, weak encryption, outdated services).
-   Produce a prioritised report and summary for the remediation team.
+   - Group findings by severity and potential business impact.
+   - Highlight critical and high-severity issues first (e.g., remote code execution, weak encryption, outdated services).
+   - Produce a prioritised report and summary for the remediation team.
 
 <img width="940" height="475" alt="image" src="https://github.com/user-attachments/assets/29bcb8ee-f5fa-4f7b-98be-bd586c9ccadb" />
    
