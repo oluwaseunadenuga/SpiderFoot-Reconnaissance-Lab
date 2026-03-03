@@ -1,6 +1,6 @@
 ## Vulnerability Assessment using Nessus Essentials
 ## Overview
-This project showcases hands-on vulnerability assessment skills using Nessus Essentials to identify, analyse and prioritize security weaknesses on a lab network host. 
+This project showcases hands-on vulnerability assessment skills using Nessus Essentials to identify, analyse and prioritise security weaknesses on a lab network host. 
 The engagement covers end-to-end activities:
 - Defining scope
 - Configuring a scan policy
@@ -37,8 +37,8 @@ Supporting screenshots in the repository illustrate:
 •	The target configuration page showing the defined scope.
 •	The detailed configuration tabs (General, Discovery, Port Scanning). 
 
-   <img width="940" height="389" alt="image" src="https://github.com/user-attachments/assets/fe2d5926-4f10-48d3-a892-b3f12d3fd43b" />
-   <img width="940" height="383" alt="image" src="https://github.com/user-attachments/assets/f6b91489-627a-4546-b3e4-7f2f452eb086" />
+ <img width="940" height="389" alt="image" src="https://github.com/user-attachments/assets/fe2d5926-4f10-48d3-a892-b3f12d3fd43b" />
+ <img width="940" height="383" alt="image" src="https://github.com/user-attachments/assets/f6b91489-627a-4546-b3e4-7f2f452eb086" />
 
 3. Choose the **Basic Network Scan** template (most appropriate for initial unauthenticated discovery).
 
@@ -53,10 +53,10 @@ Supporting screenshots in the repository illustrate:
 
 
 5. **Export and structure results**  
-   Export the findings as CSV from Nessus.
-   Load the CSV into a spreadsheet to:
-   Clean and standardise fields (e.g., plugin ID, severity, host, port, protocol, name, synopsis, solution).
-   Enable filtering and sorting by severity, plugin family, or affected port.
+  - Export the findings as CSV from Nessus.
+  - Load the CSV into a spreadsheet to:
+  - Clean and standardise fields (e.g., plugin ID, severity, host, port, protocol, name, synopsis, solution).
+  - Enable filtering and sorting by severity, plugin family, or affected port.
 
 <img width="940" height="336" alt="image" src="https://github.com/user-attachments/assets/f5975954-dd99-45f2-b058-430d1b34f8ec" />
 <img width="940" height="407" alt="image" src="https://github.com/user-attachments/assets/cdbfeb0b-1d13-408a-afc1-9cc45e8598a3" />
@@ -66,7 +66,7 @@ Supporting screenshots in the repository illustrate:
    Highlight critical and high-severity issues first (e.g., remote code execution, weak encryption, outdated services).
    Produce a prioritised report and summary for the remediation team.
 
-   <img width="940" height="475" alt="image" src="https://github.com/user-attachments/assets/29bcb8ee-f5fa-4f7b-98be-bd586c9ccadb" />
+<img width="940" height="475" alt="image" src="https://github.com/user-attachments/assets/29bcb8ee-f5fa-4f7b-98be-bd586c9ccadb" />
    
 ## Remediation Handoff & Key Takeaways
 - Final deliverable included:
