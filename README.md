@@ -1,132 +1,67 @@
-# APT Breach: Analysing the impact on information security
-<img width="1152" height="768" alt="image" src="https://github.com/user-attachments/assets/9abe98ec-8829-4c61-b6b5-30315450ae0d" />
+## Project Overview
+This hands-on lab demonstrates a complete vulnerability assessment workflow using **Nessus Essentials** (free/community edition) running on **Kali Linux**, targeting the deliberately vulnerable **Metasploitable 2** virtual machine.
 
-## INTRODUCTION
-This project focuses on investigating a cyberattack by APT34 and producing a comprehensive report documenting the findings and outlining key recommendations to improve a client's cybersecurity posture.
+The exercise covers:
+- Defining scan scope and policy
+- Configuring and launching an unauthenticated Basic Network Scan
+- Monitoring execution
+- Exporting structured results (CSV)
+- Analysing, prioritising and reporting findings for remediation
+All activities were performed in an isolated lab environment.
 
-<img width="1000" height="750" alt="image" src="https://github.com/user-attachments/assets/93c86d1d-d95b-489a-88bc-55bf745eb839" />
+## Environment & Scope
+- **Scanner**: Nessus Essentials (cloud-connected)
+- **Operating System**: Kali Linux
+- **Target**: Metasploitable 2 VM (single host)
+- **Scan Type**: Basic Network Scan (unauthenticated)
+- **In scope**: Network-reachable services, open ports, known CVEs, misconfigurations
+- **Out of scope**: Authenticated scans, web application testing, production systems
 
-## PROBLEM STATEMENT
-A leading tech corporation client experienced a sophisticated cyberattack by the notorious Advanced Persistent Threat (APT) group APT34. The attack, believed to be sponsored by a foreign government, has left the organisation's network compromised and valuable customer data and intellectual property have been stolen.
+<img width="1519" height="852" alt="Kali IP" src="https://github.com/user-attachments/assets/cdfa54fd-c7e4-42c4-bddd-d9434fde538f" />
+<img width="1448" height="799" alt="Target machine" src="https://github.com/user-attachments/assets/d32b8ec9-c403-46ce-9e82-46e08c856221" />
+<img width="1226" height="775" alt="Nessus Essentials" src="https://github.com/user-attachments/assets/23d0503c-b33a-42ec-8459-1e7958453990" />
+<img width="1455" height="881" alt="Scan Template" src="https://github.com/user-attachments/assets/2c3324bd-6a11-48fa-a4d2-2b994d91a1e7" />
 
-## OBJECTIVES
-- Conduct an initial investigation into APT34 and evaluate the potential impact of the attack on the organisation.
-- Produce a comprehensive report documenting my findings and outlining key recommendations to improve the organisation's cybersecurity posture.
+## Methodology
+1. **Define scope and objectives**  
+   Confirmed target IP and restricted scope to the lab VM only.
 
-## TASKS
-- Utilise various Open-source Intelligence(OSINT)tools and techniques to gather information on APT34
-- Apply the MITRE ATT&CK Framework to identify and categorise to develop a comprehensive defence strategy to protect the client's networks and systems against future attacks.
-- Provide answers to the following questions
-- What is their history?
-- Which nation/state are they associated with?
-- Do they target specific industries?
-- What are their motives?
-- What are the TTPs they use to conduct their attacks?
-- What security measures could the client implement to defend against cyberattacks conducted by this APT?
+   <img width="1460" height="923" alt="Basic Scan" src="https://github.com/user-attachments/assets/c7f1e413-5198-4600-adf2-8777d7e418fe" />
 
-## OSINT TOOLS
-OSINT tools used to gather information on APT34
-- Mandiant Security Blog: https://www.mandiant.com/resources/blog
-- CrowdStrike: https://www.crowdstrike.com 
-- Recorded Future: https://www.recordedfuture.com
-- CyberScoop: https://www.cyberscoop.com
-- Dark Reading: https://www.darkreading.com
-- The CyberWire: https://thecyberwire.com
-- SecureWorks - https://www.secureworks.com 
-- ThreatConnect - https://www.threatconnect.com 
-- Kaspersky Lab: https://www.kaspersky.com
-- Symantec Threat Intelligence: https://www.symantec.com/threat-intelligence
+2. **Select and configure scan type**  
+   Choose the **Basic Network Scan** template (most appropriate for initial unauthenticated discovery).
 
-## MITRE ATT&CK Framework (https://attack.mitre.org/)
-This is a widely used tool for categorising and identifying cyber threats.
-- Cybersecurity and Infrastructure Security Agency (CISA): https://www.cisa.gov
-- US-CERT: https://www.us-cert.gov
+3. **Run scan and monitor execution**  
+ Launched scan → monitored real-time progress in the Nessus dashboard.
 
-# Comprehensive Cybersecurity Assessment: APT34 (OilRig)
+<img width="1918" height="688" alt="Vulnerability Scanning on Metasploitable host" src="https://github.com/user-attachments/assets/e8887808-21e3-44e2-980a-9918cec21ef4" />
 
-## Executive Summary
-This report provides actionable insights into APT34 (OilRig), an advanced persistent threat (APT) group linked to Iran. The findings outline the group's history, tactics, targets and motivations, along with a comprehensive defense strategy. The goal is to enhance the client’s security posture and mitigate risks associated with APT34 attacks.
+4. **Review and export the full results**  
+     
+<img width="1237" height="735" alt="1" src="https://github.com/user-attachments/assets/94abb983-c058-4956-aa73-f470f97073bc" />
 
-## 1.0 Overview of APT34
-**History**
+5. **Prioritise vulnerabilities and prepare a report**  
+   Focused remediation effort on **Critical → High** issues first.
+   
+<img width="1228" height="784" alt="2" src="https://github.com/user-attachments/assets/f5df9e07-74da-4a48-ad94-1154f802b876" />
+<img width="1231" height="707" alt="6b" src="https://github.com/user-attachments/assets/c78ab23d-3346-42e3-80f4-d28e69b15136" />
+<img width="1230" height="748" alt="6d" src="https://github.com/user-attachments/assets/162830f0-e695-42ab-8de7-ab33093827f5" />
 
-APT34 has been active since at least 2014, conducting cyber-espionage campaigns that primarily target organisations in the Middle East and occasionally in other regions. Known for its sophisticated and persistent attacks, APT34 uses custom malware, phishing and web shells to achieve its objectives.
+## Remediation Handoff & Key Takeaways
+- Final deliverable included:
+- Recommended remediation steps for critical/high items
+These outputs simulate handover to an internal IT/security operations team.
 
-## Nation/State Association
-APT34 is widely attributed to Iran, with operations aligning closely with the nation’s strategic and geopolitical goals.
+## Skills Demonstrated
+- Nessus Essentials policy creation & tuning
+- Target scoping and constraint definition
+- Real-time scan monitoring & result interpretation
+- CSV export + spreadsheet-based vulnerability prioritisation
+- Risk-based reporting suitable for technical & management audiences
+- Controlled lab-based ethical vulnerability assessment
 
-## Targeted Industries
-The group targets:
-- Government agencies
-- Financial institutions 
-- Energy companies 
-- Telecommunications
-- Defense contractor
-- Critical infrastructures 
-
-## Motives
-APT34’s primary motive is espionage. The group seeks to collect:
-- Sensitive information to support state objectives
-- Gain strategic advantages in geopolitical conflicts
-- Disrupt adversarial operations in key sectors
-
-## 2.0 APT34 Tactics, Techniques and Procedures (TTPs)
-**Using the MITRE ATT&CK Framework, APT34’s TTPs include:**
-
-**Tactic/**                **Techniques**
-- Initial Access:          Spear-phishing links (T1566.001), exploiting public-facing applications (T1190)
-- Execution:	             PowerShell scripting (T1059.001), execution of malicious payload(T1203)
-- Persistence:	           Web shells (T1505.003), account manipulation (T1098)
-- Privilege Escalation:	   Exploiting vulnerabilities for elevated privileges (T1068)
-- Defense Evasion:	       Obfuscated scripts (T1027), credential dumping (T1003)
-- Command and Control:	   HTTPS or DNS tunneling for encrypted C2 communication (T1071.001)
-- Exfiltration:            Data staging and exfiltration over encrypted channels (T1048.002)
-
-## Tools Associated with APT34
-- PoisonFrog: A backdoor for remote access
-- PowBat: A PowerShell-based tool
-- TwoFace: A web shell
-
-## 3.0 Defense Strategy Against APT34
-To mitigate risks, the following multi-layered security measures are recommended:
-
-**A. Network Security**
-1.	**Network Segmentation**: Restrict access between critical systems and general networks.
-2.	**Intrusion Detection and Prevention Systems (IDPS)**: Deploy systems to detect and block unusual traffic patterns and known APT34 signatures.
-3.	**DNS Filtering:** Block known malicious domains associated with APT34’s infrastructure.
-
-**B. Endpoint Security**
-1.	**Endpoint Detection and Response (EDR)**: Monitor endpoints for suspicious activity.
-2.	**Regular Patching**: Ensure timely updates of software to address vulnerabilities.
-3.	**Application Whitelisting**: Prevent unauthorised execution of applications or scripts.
-
-**C.Identity and Access Management (IAM)**
-1.	**Multi-Factor Authentication (MFA)**: Enforce MFA for all critical accounts.
-2.	**Least Privilege Access**: Apply the principle of least privilege to minimise access.
-3.	**Account Monitoring**: Monitor for unusual login attempts or privilege escalations.
-
-**D. Email Security**
-1.	**Anti-Phishing Solutions**: Use tools to detect and block phishing emails.
-2.	**User Training:** Educate employees to recognise and report phishing attempts.
-
-**E. Threat Intelligence and Monitoring**
-1.	**Threat Feeds**: Monitor threat intelligence feeds for Indicators of Compromise (IOCs) related to APT34.
-2.	**Penetration Testing:** Simulate attacks to identify vulnerabilities in defences.
-
-**F. Incident Response and Recovery**
-1.	**Incident Response Plan**: Develop and routinely test an incident response plan.
-2.	**Backup Strategy**: Maintain offline backups to mitigate the impact of data theft or destruction.
-
-**G. Continuous Monitoring and Analytics**
-1.	**SIEM Solutions**: Implement Security Information and Event Management (SIEM) systems to centralise and correlate logs.
-2.	**Behavioural Analytics**: Leverage analytics to detect anomalies indicative of APT-style attacks.
-
-## 4.0 CONCLUSION AND RECOMMENDATIONS
-APT34’s sophisticated tactics and nation-state backing make it a persistent and formidable threat. The client should:
-- Implement the recommended defence strategies to strengthen their security posture.
-- Regularly update and test their defenses based on emerging threat intelligence.
-- Foster a culture of security awareness among employees to reduce human error.
-
-By adopting these measures, the client can significantly reduce the risk of successful APT34 attacks and enhance resilience against future threat targets. Top Wastage Causes.
-  
-## THANK YOU
+## Disclaimer
+Performed **exclusively in a private lab environment** using Metasploitable 2 (a legal, purpose-built vulnerable target). No production systems, live networks, or unauthorised assets were involved.
+Screenshots are included directly from the lab walkthrough for transparency and portfolio review.
+Feel free to contact me for questions/collaboration.
+Last updated: February 2026
