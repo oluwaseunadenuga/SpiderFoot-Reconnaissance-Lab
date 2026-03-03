@@ -62,9 +62,9 @@ Supporting screenshots in the repository illustrate:
 <img width="940" height="407" alt="image" src="https://github.com/user-attachments/assets/cdbfeb0b-1d13-408a-afc1-9cc45e8598a3" />
 
 6. **Prioritise vulnerabilities and prepare a report**  
-   - Group findings by severity and potential business impact.
-   - Highlight critical and high-severity issues first (e.g., remote code execution, weak encryption, outdated services).
-   - Produce a prioritised report and summary for the remediation team.
+- Group findings by severity and potential business impact.
+- Highlight critical and high-severity issues first (e.g., remote code execution, weak encryption, outdated services).
+- Produce a prioritised report and summary for the remediation team.
 
 <img width="940" height="475" alt="image" src="https://github.com/user-attachments/assets/29bcb8ee-f5fa-4f7b-98be-bd586c9ccadb" />
    
