@@ -12,7 +12,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Objective](#-objective)
 - [Lab Environment](#-lab-environment)
@@ -27,7 +27,7 @@
 
 ---
 
-## 🎯 Objective
+## Objective
 
 The goal of this lab is to simulate the **OSINT reconnaissance phase** of an authorized penetration test or threat intelligence assessment.
 
@@ -40,13 +40,13 @@ Using SpiderFoot's automated scanning engine, I collected and correlated publicl
 - GitHub/Pastebin data leaks
 - Technology stack fingerprinting
 
-> ⚠️ **All scans were performed in a controlled, authorized lab environment. No real organizations were targeted.**
+> **All scans were performed in a controlled, authorized lab environment. No real organizations were targeted.**
 
 This project demonstrates competency in passive reconnaissance techniques applicable to **red team engagements**, **vulnerability assessments**, and **defensive exposure audits**.
 
 ---
 
-## 🖥️ Lab Environment
+## Lab Environment
 
 | Component | Details |
 |---|---|
@@ -78,7 +78,7 @@ python3 sf.py -s target-example.com -u footprint -o json > scan_results.json
 
 ---
 
-## 📊 Scan Statistics
+## Scan Statistics
 
 | Metric | Value |
 |---|---|
@@ -91,7 +91,7 @@ python3 sf.py -s target-example.com -u footprint -o json > scan_results.json
 
 ---
 
-## 🔍 Methodology
+## Methodology
 
 The engagement followed a structured passive reconnaissance workflow across **four phases**:
 
@@ -109,7 +109,7 @@ The engagement followed a structured passive reconnaissance workflow across **fo
 
 ---
 
-## 🧩 Modules Used
+## Modules Used
 
 47 modules were activated across 6 intelligence categories:
 
@@ -124,7 +124,7 @@ The engagement followed a structured passive reconnaissance workflow across **fo
 
 ---
 
-## 🚨 Key Findings
+## Key Findings
 
 > Findings are classified by severity: `CRITICAL` `HIGH` `MEDIUM` `LOW` `INFO`
 
@@ -202,7 +202,7 @@ The engagement followed a structured passive reconnaissance workflow across **fo
 
 ---
 
-## 🖼️ Evidence & Screenshots
+## Evidence & Screenshots
 
 > *Screenshots captured from the SpiderFoot Web UI and CLI during live lab execution.*
 
@@ -255,7 +255,7 @@ The graph visualization displayed node relationships between:
 
 ---
 
-## ✅ Recommendations
+## Recommendations
 
 | Priority | ID | Recommendation |
 |---|---|---|
@@ -268,7 +268,7 @@ The graph visualization displayed node relationships between:
 
 ---
 
-## 🧠 Skills Demonstrated
+## Skills Demonstrated
 
 | Domain | Skills |
 |---|---|
@@ -281,7 +281,7 @@ The graph visualization displayed node relationships between:
 
 ---
 
-## 📁 Related Projects
+## Related Projects
 
 | Project | Description | Link |
 |---|---|---|
@@ -291,7 +291,7 @@ The graph visualization displayed node relationships between:
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 > This project was conducted in a **controlled, authorized lab environment** for educational and portfolio purposes only.  
 > No real organizations, systems, or individuals were targeted without explicit authorization.  
