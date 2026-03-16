@@ -1,302 +1,347 @@
-# 🕷️ SpiderFoot OSINT Reconnaissance Lab
+# 🛡️ Vulnerability Assessment using Nessus Essentials
 
-![OSINT](https://img.shields.io/badge/Type-OSINT%20Reconnaissance-blue?style=flat-square)
-![Tool](https://img.shields.io/badge/Tool-SpiderFoot%20v4.0-darkblue?style=flat-square)
-![Platform](https://img.shields.io/badge/Platform-Kali%20Linux-purple?style=flat-square)
-![Language](https://img.shields.io/badge/Language-Python%203-green?style=flat-square)
-![Mode](https://img.shields.io/badge/Scan%20Mode-Passive%20%2B%20Footprint-orange?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square)
+![Tool](https://img.shields.io/badge/Tool-Nessus%20Essentials-2ea44f?style=flat-square)
+![Type](https://img.shields.io/badge/Scan-Basic%20Network%20Scan-0075ca?style=flat-square)
+![Scope](https://img.shields.io/badge/Scope-Unauthenticated%20Lab%20Host-586069?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Complete-2ea44f?style=flat-square)
+![Phases](https://img.shields.io/badge/Phases-5-6f42c1?style=flat-square)
+![Environment](https://img.shields.io/badge/Environment-Controlled%20Lab-e36209?style=flat-square)
 
-> **Automated Open-Source Intelligence & Attack Surface Enumeration**  
-> A hands-on cybersecurity lab demonstrating passive reconnaissance, digital attack surface mapping, and threat intelligence correlation using SpiderFoot — all within an authorized lab environment.
+A hands-on vulnerability assessment project using **Nessus Essentials** (cloud-connected) to identify, analyse, and prioritise security weaknesses on a lab network host. The engagement covers the complete end-to-end workflow: scope definition → scan configuration → execution → CSV export → risk-based prioritisation → remediation handoff.
+
+> *This lab simulates how a security analyst performs an initial vulnerability sweep on a new asset and generates actionable outputs for an IT remediation team.*
+
+> [!NOTE]
+> **Portfolio / Lab Project** — This assessment was performed in a controlled lab environment for educational and portfolio purposes only. No production systems or real-world customer data were scanned or impacted.
 
 ---
 
-## Table of Contents
+## 📋 Table of Contents
 
-- [Objective](#-objective)
-- [Lab Environment](#-lab-environment)
-- [Scan Statistics](#-scan-statistics)
-- [Methodology](#-methodology)
-- [Modules Used](#-modules-used)
-- [Key Findings](#-key-findings)
-- [Evidence & Screenshots](#-evidence--screenshots)
-- [Recommendations](#-recommendations)
+- [Project Overview](#-project-overview)
+- [Environment & Scope](#-environment--scope)
+- [Methodology](#%EF%B8%8F-methodology)
+- [Scan Configuration](#-scan-configuration)
+- [Scan Execution & Results](#-scan-execution--results)
+- [Findings Export & Structured Report](#-findings-export--structured-report)
+- [Prioritised Vulnerabilities](#-prioritised-vulnerabilities-risk-based-view)
+- [Remediation Handoff](#-remediation-handoff--recommendations)
+- [Outcomes & Deliverables](#-outcomes--deliverables)
+- [Tools & Technologies](#-tools--technologies)
 - [Skills Demonstrated](#-skills-demonstrated)
-- [Related Projects](#-related-projects)
 
 ---
 
-## Objective
+## 🎯 Project Overview
 
-The goal of this lab is to simulate the **OSINT reconnaissance phase** of an authorized penetration test or threat intelligence assessment.
+This project demonstrates hands-on vulnerability assessment competency using **Nessus Essentials** against a single lab virtual machine. The engagement replicates the initial vulnerability sweep a security analyst would conduct on a new asset — from scope agreement through to producing a prioritised findings report ready for IT remediation handoff.
 
-Using SpiderFoot's automated scanning engine, I collected and correlated publicly available data about a simulated target organization, identifying:
+The lab covers the complete vulnerability management lifecycle:
 
-- Exposed subdomains and DNS records
-- Associated corporate email addresses
-- Leaked credential references (via HaveIBeenPwned correlation)
-- IP reputation intelligence and blacklist presence
-- GitHub/Pastebin data leaks
-- Technology stack fingerprinting
-
-> **All scans were performed in a controlled, authorized lab environment. No real organizations were targeted.**
-
-This project demonstrates competency in passive reconnaissance techniques applicable to **red team engagements**, **vulnerability assessments**, and **defensive exposure audits**.
+- ✅ Target scoping and rules of engagement definition
+- ✅ Scan template selection and policy configuration
+- ✅ Scan execution and dashboard monitoring
+- ✅ CSV export and spreadsheet-based data structuring
+- ✅ Risk-based prioritisation by severity and business impact
+- ✅ Formal reporting and remediation handoff
 
 ---
 
-## Lab Environment
+## 🔭 Environment & Scope
 
-| Component | Details |
-|---|---|
-| **Primary Tool** | SpiderFoot v4.0.0 |
-| **Runtime** | Python 3.11 |
-| **Operating System** | Kali Linux 2024.x |
-| **Interface** | Web UI — `localhost:5001` |
-| **Scan Modes** | Passive + Footprint |
-| **Target Types** | Domain, IP Range, Organisation Name |
-| **API Integrations** | Shodan, AbuseIPDB, VirusTotal, HaveIBeenPwned |
-| **Output Formats** | CSV, JSON, Graph Visualization |
+| Attribute | Detail |
+|-----------|--------|
+| **Scanner** | Nessus Essentials (cloud-connected) |
+| **Scan Type** | Basic Network Scan (unauthenticated) |
+| **Target** | Single lab VM — network-reachable over local network |
+| **In Scope** | Network-reachable services, open ports, known CVEs, misconfigurations |
+| **Out of Scope** | Web application logic, credentialed/authenticated scans, production systems |
+| **Objective** | Identify network-level vulnerabilities; generate prioritised findings for IT team |
 
-### 🔧 Setup & Installation
+> The goal of this lab is to simulate how a security analyst performs an initial vulnerability sweep on a new asset and generates actionable outputs for remediation.
 
-```bash
-# Clone the SpiderFoot repository
-git clone https://github.com/smicallef/spiderfoot.git
-cd spiderfoot
+---
 
-# Install Python dependencies
-pip3 install -r requirements.txt
+## ⚙️ Methodology
 
-# Launch the web interface on localhost
-python3 sf.py -l 127.0.0.1:5001
+A structured five-phase approach was followed, aligned to standard vulnerability management lifecycle practices:
 
-# Alternative: CLI scan with footprint mode, JSON output
-python3 sf.py -s target-example.com -u footprint -o json > scan_results.json
+<details>
+<summary><strong>Phase 1 — Define Scope & Objectives</strong></summary>
+
+- Confirmed target IP/hostname; verified only the lab host was in scope
+- Agreed objective: identify network-level vulnerabilities and misconfigurations
+- Documented rules of engagement and out-of-scope boundaries
+
+</details>
+
+<details>
+<summary><strong>Phase 2 — Select & Configure Scan Template</strong></summary>
+
+- Created a new **Basic Network Scan** in Nessus Essentials
+- Reviewed three available scan types:
+  - **Basic Network Scan** ← selected
+  - Advanced Scan
+  - Web Application Scan
+- Configured: general settings (name, description, target IP), port scanning (default TCP range), service detection, and performance options appropriate for a lab environment
+
+</details>
+
+<details>
+<summary><strong>Phase 3 — Run Scan & Monitor Execution</strong></summary>
+
+- Launched the scan and monitored real-time progress from the Nessus dashboard
+- Verified: successful scan completion, host discovery, vulnerability population
+- Reviewed drill-down views showing per-plugin details, affected port, and impacted host
+
+</details>
+
+<details>
+<summary><strong>Phase 4 — Export & Structure Results</strong></summary>
+
+- Exported full findings as **CSV** from Nessus
+- Imported CSV into a spreadsheet to:
+  - Normalise column names
+  - Filter out purely informational findings (if required)
+  - Sort and group by severity, plugin family, and affected port
+
+</details>
+
+<details>
+<summary><strong>Phase 5 — Prioritise & Prepare Remediation Report</strong></summary>
+
+- Grouped findings by severity and potential business impact
+- Highlighted **Critical** and **High** severity issues first (e.g. RCE, weak encryption, outdated services)
+- Produced a prioritised report and remediation summary for the IT team
+
+</details>
+
+---
+
+## 🔧 Scan Configuration
+
+Key configuration elements for the Basic Network Scan:
+
+| Setting | Value |
+|---------|-------|
+| **Template** | Basic Network Scan |
+| **Target** | Single Lab VM (IP/hostname) |
+| **Scan Type** | Unauthenticated |
+| **Port Range** | Default TCP |
+| **Service Detection** | Enabled |
+| **OS Detection** | Enabled |
+| **Host Discovery** | Ping + TCP |
+| **Export Format** | CSV |
+
+```
+Nessus Scan Templates Reviewed:
+  [✓] Basic Network Scan     ← Selected
+  [ ] Advanced Scan          ← Reviewed
+  [ ] Web Application Scan   ← Reviewed
+  [ ] Credentialed Scan      ← Out of scope
+```
+
+> Supporting screenshots in the repository illustrate:
+> - The scan template selection screen
+> - The target configuration page showing defined scope
+> - The detailed configuration tabs: General, Discovery, Port Scanning
+
+---
+
+## 🚀 Scan Execution & Results
+
+Once the configuration was saved, the Basic Network Scan was executed against the lab host.
+
+During and after execution, the Nessus dashboard displayed:
+
+- Host discovery and overall scan status (running → completed)
+- Summary of vulnerabilities by severity: **Critical, High, Medium, Low**
+- Drill-down views showing each plugin, affected port, and impacted host
+
+**Scan Summary:**
+
+| Severity | Count |
+|----------|:-----:|
+| 🔴 Critical | 2 |
+| 🟠 High | 5 |
+| 🔵 Medium | 11 |
+| 🟢 Low | 9 |
+| **Total** | **27** |
+
+> Screenshots in the repository show:
+> - The scan details page (status, duration, host count)
+> - The vulnerability summary chart by severity
+> - Example detailed finding views for individual plugins
+
+---
+
+## 📊 Findings Export & Structured Report
+
+After scan completion:
+
+### 1. CSV Export
+The full set of Nessus findings was exported as a CSV file. The CSV contains columns including:
+
+```
+Plugin ID | Name | Severity | Description | Solution | Host | Port | Protocol | Plugin Family
+```
+
+### 2. Data Structuring
+The CSV was imported into a spreadsheet to:
+- Normalise column names
+- Filter out informational findings (optional)
+- Sort and group by severity and asset
+
+### 3. Sample Structured Findings
+
+| Plugin ID | Vulnerability | Severity | Port | CVE | Synopsis |
+|-----------|--------------|----------|------|-----|----------|
+| `34477` | MS08-067 NetAPI RCE | 🔴 Critical | 445/TCP | CVE-2008-4250 | Unpatched SMB allows unauthenticated RCE |
+| `21156` | UnrealIRCd Backdoor RCE | 🔴 Critical | 6667/TCP | CVE-2010-2075 | Trojanised IRC server allows arbitrary command execution |
+| `65821` | SSL/TLS POODLE Vulnerability | 🟠 High | 443/TCP | CVE-2014-3566 | SSLv3 enabled — POODLE padding oracle attack |
+| `78479` | OpenSSH Outdated Version | 🟠 High | 22/TCP | CVE-2023-38408 | Running version affected by multiple CVEs |
+| `10254` | Apache httpd Outdated Version | 🟠 High | 80/TCP | CVE-2022-31813 | Missing security patches for known vulnerabilities |
+| `44401` | FTP Anonymous Access Enabled | 🔵 Medium | 21/TCP | — | Anonymous FTP login permitted — data exposure risk |
+| `11219` | Open Port Disclosure | 🟢 Low | Various | — | Informational — open port enumeration result |
+
+> 📁 Full structured findings available in [`findings.csv`](./findings.csv)
+
+---
+
+## 🎯 Prioritised Vulnerabilities (Risk-Based View)
+
+Vulnerabilities were prioritised based on:
+
+- **Technical severity** — as reported by Nessus (Critical, High, Medium, Low)
+- **Potential impact** — on the host and business (e.g. remote code execution vs minor information disclosure)
+- **Exploitability** — known exploits, network exposure, proof-of-concept availability
+
+### Priority Tiers
+
+**🔴 Critical — Immediate Action**
+> Exploitable remote services allowing code execution or full host compromise. Treat as P1 — must be addressed before the host connects to any production network.
+
+**🟠 High — Urgent**
+> Weak or deprecated protocols, missing security patches on exposed services. Schedule remediation within the patch management SLA (typically 7–14 days).
+
+**🔵 Medium — Scheduled**
+> Misconfigurations, unnecessary access methods, hardening gaps. Address within the next maintenance window.
+
+**🟢 Low / Informational — Routine**
+> Minor findings, limited exploitability. Address as part of ongoing security hygiene and hardening cycles.
+
+> [!WARNING]
+> **Critical Priority** — The MS08-067 (SMB RCE) and UnrealIRCd backdoor findings represent immediate, unauthenticated remote code execution vulnerabilities. These must be remediated before the host is connected to any shared network segment.
+
+---
+
+## 🔨 Remediation Handoff & Recommendations
+
+The final deliverables were positioned as artefacts for the IT remediation team:
+
+### Immediate (Critical)
+- Apply **MS08-067** security patch (KB958644) to address SMB RCE
+- Remove or replace the **trojanised UnrealIRCd** service
+- Firewall port 6667 pending service replacement
+
+### Urgent (High)
+- Disable **SSLv3** across all services; enforce TLS 1.2 minimum
+- Upgrade **OpenSSH** to the current stable release
+- Apply all outstanding **Apache httpd** security patches
+- Audit all services for deprecated or unencrypted protocol exposure
+
+### Scheduled (Medium)
+- Disable **anonymous FTP** access
+- Review and disable unnecessary services running on non-standard ports
+- Apply **CIS Benchmark** hardening to the host OS
+- Firewall unused services: Telnet, rlogin, distccd
+
+### Ongoing (Low / Hygiene)
+- Document full open port inventory
+- Schedule follow-up **credentialed scan** post-remediation to validate patch effectiveness
+- Implement recurring vulnerability scanning schedule (monthly recommended)
+
+---
+
+## 📈 Outcomes & Deliverables
+
+| Deliverable | Description |
+|-------------|-------------|
+| **Structured CSV Export** | Normalised Nessus findings — Plugin ID, Severity, Host, Port, Protocol, Name, Synopsis, Solution, Plugin Family |
+| **Prioritised Vulnerability Report** | Risk-sorted findings report with Critical/High issues first, Medium/Low grouped by category |
+| **Scan Configuration Documentation** | Documented scan policy, template selection rationale, and configuration settings |
+| **Remediation Recommendations** | Actionable, severity-ordered remediation steps with patch references and hardening guidance |
+
+---
+
+## 🔧 Tools & Technologies
+
+```
+Scanner          Nessus Essentials (cloud-connected)
+Scan Type        Basic Network Scan (unauthenticated)
+Export Format    CSV
+Data Processing  Microsoft Excel / Google Sheets
+Lab Platform     VirtualBox / VMware
+Target OS        Linux-based lab VM
+Reference        NIST NVD (CVE lookup & severity validation)
+Dashboard        Nessus Web UI (scan monitoring & results)
 ```
 
 ---
 
-## Scan Statistics
+## 🎓 Skills Demonstrated
 
-| Metric | Value |
-|---|---|
-| Total Modules Available | 200+ |
-| Modules Activated | 47 |
-| Data Events Collected | 1,240 |
-| Notable Findings | 18 |
-| Intelligence Categories | 6 |
-| Scan Duration | ~3 hours |
-
----
-
-## Methodology
-
-The engagement followed a structured passive reconnaissance workflow across **four phases**:
-
-| Phase | Activity | Data Collected | SpiderFoot Mode |
-|---|---|---|---|
-| **01** | Target Seeding | Domain name, org name, ASN, IP ranges | `Passive` |
-| **02** | Footprinting | Subdomains, DNS records, WHOIS, SSL certs, email addresses | `Footprint` |
-| **03** | Threat Intel Correlation | Blacklist presence, breach data, malicious IP flags, dark web mentions | `Investigate` |
-| **04** | Analysis & Reporting | Graph visualization, correlation mapping, risk classification | All output formats |
-
-**Approach:**
-- **Passive mode** was used first to build a broad intelligence baseline without direct contact with target systems
-- **Footprint mode** was applied second to surface deeper technical infrastructure details
-- All findings were correlated across multiple data sources for accuracy before classification
+![Vulnerability Assessment](https://img.shields.io/badge/Technical-Vulnerability%20Assessment-2ea44f?style=flat-square)
+![Nessus](https://img.shields.io/badge/Tool-Nessus%20Essentials-2ea44f?style=flat-square)
+![Scan Config](https://img.shields.io/badge/Technical-Scan%20Scoping%20%26%20Configuration-0075ca?style=flat-square)
+![CVE](https://img.shields.io/badge/Technical-CVE%20Identification%20%26%20Analysis-0075ca?style=flat-square)
+![CSV Export](https://img.shields.io/badge/Technical-Findings%20Export%20%28CSV%29-0075ca?style=flat-square)
+![Data Structure](https://img.shields.io/badge/Technical-Data%20Structuring%20%26%20Normalisation-586069?style=flat-square)
+![Prioritisation](https://img.shields.io/badge/GRC-Risk--Based%20Prioritisation-6f42c1?style=flat-square)
+![Severity](https://img.shields.io/badge/GRC-Severity%20Classification-6f42c1?style=flat-square)
+![Exploitability](https://img.shields.io/badge/GRC-Exploitability%20Analysis-6f42c1?style=flat-square)
+![Remediation](https://img.shields.io/badge/Soft%20Skill-Remediation%20Reporting-e36209?style=flat-square)
+![Handoff](https://img.shields.io/badge/Soft%20Skill-IT%20Team%20Handoff-e36209?style=flat-square)
+![VM Lifecycle](https://img.shields.io/badge/Technical-Vulnerability%20Management%20Lifecycle-0075ca?style=flat-square)
 
 ---
 
-## Modules Used
-
-47 modules were activated across 6 intelligence categories:
-
-| Category | Modules |
-|---|---|
-| **DNS & Subdomain** | `sfp_dns`, `sfp_sublist3r`, `sfp_hackertarget`, `sfp_crt` |
-| **IP & Network** | `sfp_shodan`, `sfp_abuseipdb`, `sfp_spyse` |
-| **Threat Intelligence** | `sfp_virustotal`, `sfp_threatcrowd`, `sfp_leakix` |
-| **Credential & Breach** | `sfp_haveibeenpwned`, `sfp_pastebin` |
-| **Identity & Social** | `sfp_emailformat`, `sfp_linkedin`, `sfp_github` |
-| **Web & Certificates** | `sfp_ssl`, `sfp_googlesearch` |
-
----
-
-## Key Findings
-
-> Findings are classified by severity: `CRITICAL` `HIGH` `MEDIUM` `LOW` `INFO`
-
----
-
-### 🔴 HIGH — Email Addresses in Breach Databases
-
-**Finding:** 4 corporate email addresses were identified in HaveIBeenPwned correlations, indicating potential credential exposure from third-party data breaches. Passwords may be reused across internal systems.
-
-**Module:** `sfp_haveibeenpwned`  
-**Risk:** Credential stuffing, unauthorized access  
-
----
-
-### 🔴 HIGH — Exposed Subdomain with Open Admin Panel
-
-**Finding:** `sfp_hackertarget` identified a subdomain (`admin.target-example.com`) with an accessible login panel responding on port 8080. Not listed in public DNS, but indexed via Certificate Transparency logs.
-
-**Module:** `sfp_hackertarget`, `sfp_crt`  
-**Risk:** Brute-force attack surface, unauthorized admin access  
-
----
-
-### 🟠 MEDIUM — Organisation IP Range Flagged on AbuseIPDB
-
-**Finding:** Two IP addresses within the organisation's ASN netblock appeared in AbuseIPDB with reports of prior malicious activity, suggesting possible historical compromise or hosting abuse.
-
-**Module:** `sfp_abuseipdb`  
-**Risk:** IP reputation damage, potential prior compromise  
-
----
-
-### 🟠 MEDIUM — SSL Certificate Expiry Detected
-
-**Finding:** `sfp_ssl` flagged a subdomain with an SSL certificate expiring within 14 days. Expired certificates trigger browser security warnings and indicate poor certificate lifecycle management.
-
-**Module:** `sfp_ssl`  
-**Risk:** Service disruption, loss of user trust  
-
----
-
-### 🟠 MEDIUM — GitHub Repository Leaking Internal Config
-
-**Finding:** `sfp_github` identified a public repository belonging to an employee containing references to internal staging URLs and a partially redacted API key string.
-
-**Module:** `sfp_github`  
-**Risk:** Credential exposure, internal infrastructure disclosure  
-
----
-
-### 🟡 LOW — 27 Subdomains via Certificate Transparency
-
-**Finding:** `sfp_crt.sh` returned 27 subdomains logged in public CT logs, including dev, staging, and legacy environments — significantly expanding the known attack surface.
-
-**Module:** `sfp_crt`  
-**Risk:** Expanded attack surface, subdomain takeover potential  
-
----
-
-### 🟡 LOW — Pastebin References to Organisation Name
-
-**Finding:** `sfp_pastebin` returned 3 paste entries referencing the organisation name. One entry included internal IP address ranges, likely from a prior employee.
-
-**Module:** `sfp_pastebin`  
-**Risk:** Internal network topology disclosure  
-
----
-
-### 🔵 INFO — Technology Stack Fingerprinted
-
-**Finding:** Server, `X-Powered-By`, and framework response headers revealed the full tech stack: **Apache 2.4 / PHP 8.1 / Laravel**. This information assists in targeting known CVEs during a full penetration test.
-
-**Module:** `sfp_googlesearch`, HTTP header analysis  
-**Risk:** Targeted vulnerability exploitation in follow-on engagements  
-
----
-
-## Evidence & Screenshots
-
-> *Screenshots captured from the SpiderFoot Web UI and CLI during live lab execution.*
-
-**Fig 1 — SpiderFoot Web UI: New Scan Configuration**
+## 📂 Repository Structure
 
 ```
-[ New Scan ]
-Target:  target-example.com
-Type:    Domain Name
-Mode:    Footprint
-Modules: 47 selected
+📁 Vulnerability-Assessment-Nessus-Essentials/
+│
+├── README.md                          ← This file
+├── findings.csv                       ← Full Nessus CSV export (normalised)
+├── Prioritised-Vulnerability-Report.xlsx  ← Sorted findings by severity
+├── Scan-Configuration-Notes.md        ← Documented scan policy & settings
+├── Remediation-Handoff-Report.pdf     ← Formatted report for IT team
+└── screenshots/
+    ├── 01-scan-templates.png          ← Template selection screen
+    ├── 02-scan-config.png             ← Target & general configuration
+    ├── 03-port-settings.png           ← Port scanning configuration
+    ├── 04-scan-running.png            ← Scan execution dashboard
+    ├── 05-scan-completed.png          ← Completed scan with summary
+    ├── 06-csv-export.png              ← Structured CSV in spreadsheet
+    └── 07-priority-report.png         ← Prioritised vulnerability view
 ```
 
-**Fig 2 — Scan Results Browse View (1,240 events)**
+---
 
-```
-Event Type              | Count | Risk Level
-------------------------|-------|------------
-DNS_NAME                |  312  | INFO
-EMAILADDR               |   28  | MEDIUM
-IP_ADDRESS              |  184  | INFO
-BLACKLISTED_IP          |    2  | HIGH
-SSL_CERT_EXPIRED        |    1  | MEDIUM
-LEAKSITE_CONTENT        |    3  | HIGH
-CREDENTIAL_COMPROMISED  |    4  | HIGH
-```
+## 📬 Contact
 
-**Fig 3 — CLI Scan Output (Footprint Mode)**
+If you have questions about this project or would like to discuss vulnerability management, Nessus, or cybersecurity more broadly:
 
-```bash
-$ python3 sf.py -s target-example.com -u footprint
-
-[*]  Starting scan on target-example.com
-[+]  DNS_NAME: mail.target-example.com
-[+]  DNS_NAME: admin.target-example.com
-[+]  EMAILADDR: admin@target-example.com
-[!]  BLACKLISTED_IP: 192.0.2.45
-[~]  SSL_CERT_EXPIRED: dev.target-example.com
-[!]  LEAKSITE_CONTENT: pastebin.com/xxxxxx
-[*]  Scan complete — 1,240 events recorded
-```
-
-**Fig 4 — SpiderFoot Graph View**
-
-The graph visualization displayed node relationships between:
-- **Root domain** → subdomains → IP addresses
-- **Email addresses** → breach database correlations
-- **IP ranges** → AbuseIPDB flags
-- **Employees** → GitHub repositories → config leaks
+- 🔗 **GitHub:** [@oluwaseunadenuga](https://github.com/oluwaseunadenuga)
+- 💼 **LinkedIn:** [linkedin.com/in/oluwaseunadenuga](https://linkedin.com/in/oluwaseunadenuga)
+- 📧 **Email:** Available via LinkedIn
 
 ---
 
-## Recommendations
+<div align="center">
 
-| Priority | ID | Recommendation |
-|---|---|---|
-| 🔴 Critical | R-01 | **Credential Reset** — Reset all breached email passwords immediately and enforce MFA across SSO and VPN systems |
-| 🔴 Critical | R-02 | **Restrict Admin Panel** — Place `admin.target-example.com` behind a VPN gateway or IP allowlist |
-| 🟠 High | R-03 | **SSL Certificate Management** — Implement auto-renewal (Let's Encrypt + Certbot) and certificate expiry alerting |
-| 🟠 High | R-04 | **GitHub Repository Audit** — Scan all employee public repos for secrets, API keys, and internal URLs using GitHub secret scanning |
-| 🟡 Medium | R-05 | **Attack Surface Reduction** — Decommission or restrict unused subdomains; implement DNS monitoring for subdomain takeover |
-| 🟡 Medium | R-06 | **HTTP Header Hardening** — Remove or sanitize `Server`, `X-Powered-By`, and framework version headers from all public-facing services |
+⭐ **If you found this project useful, please consider starring the repository**
 
----
+*Performed in a controlled lab environment for educational and portfolio purposes only.*
 
-## Skills Demonstrated
-
-| Domain | Skills |
-|---|---|
-| **Reconnaissance** | OSINT Automation, Passive Recon, Subdomain Enumeration, DNS Analysis |
-| **Threat Intelligence** | IP Reputation Analysis, Breach Correlation, Dark Web Monitoring |
-| **Attack Surface Management** | Certificate Transparency, Exposed Service Discovery, Shadow IT Identification |
-| **Tools & Platforms** | SpiderFoot v4, Kali Linux, Shodan, AbuseIPDB, VirusTotal, HaveIBeenPwned |
-| **Analysis & Reporting** | Risk Classification, Finding Triage, Remediation Guidance, Graph Visualization |
-| **Development** | Python 3 (CLI usage), API Integration, JSON/CSV output parsing |
-
----
-
-## Related Projects
-
-| Project | Description | Link |
-|---|---|---|
-| 🔬 Nessus Vulnerability Assessment | Credentialed scan lab — finding analysis and CVSS triage | [View →](../Vulnerability-Assessment) |
-| 🗺️ Network Topology Mapping | Lab infrastructure diagram using Canva + mock network design | Coming Soon |
-| 📄 CVE Analysis Reports | Mock CVE research write-ups with CVSS v3.1 scoring | Coming Soon |
-
----
-
-## Disclaimer
-
-> This project was conducted in a **controlled, authorized lab environment** for educational and portfolio purposes only.  
-> No real organizations, systems, or individuals were targeted without explicit authorization.  
-> All IP addresses, domain names, and email addresses shown are simulated or anonymized.
-
----
-
-*Portfolio project by [Your Name] | Cybersecurity Analyst | [LinkedIn](#) | [GitHub](#)*
+</div>
