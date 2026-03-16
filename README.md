@@ -1,4 +1,4 @@
-# 🛡️ Vulnerability Assessment using Nessus Essentials
+# Vulnerability Assessment using Nessus Essentials
 
 ![Tool](https://img.shields.io/badge/Tool-Nessus%20Essentials-2ea44f?style=flat-square)
 ![Type](https://img.shields.io/badge/Scan-Basic%20Network%20Scan-0075ca?style=flat-square)
@@ -16,7 +16,7 @@ A hands-on vulnerability assessment project using **Nessus Essentials** (cloud-c
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Project Overview](#-project-overview)
 - [Environment & Scope](#-environment--scope)
@@ -32,9 +32,9 @@ A hands-on vulnerability assessment project using **Nessus Essentials** (cloud-c
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
-This project demonstrates hands-on vulnerability assessment competency using **Nessus Essentials** against a single lab virtual machine. The engagement replicates the initial vulnerability sweep a security analyst would conduct on a new asset — from scope agreement through to producing a prioritised findings report ready for IT remediation handoff.
+This project demonstrates hands-on vulnerability assessment competency using **Nessus Essentials** against a single lab virtual machine. The engagement replicates the initial vulnerability sweep a security analyst would conduct on a new asset, from scope agreement through to producing a prioritised findings report ready for IT remediation handoff.
 
 The lab covers the complete vulnerability management lifecycle:
 
@@ -47,7 +47,7 @@ The lab covers the complete vulnerability management lifecycle:
 
 ---
 
-## 🔭 Environment & Scope
+## Environment & Scope
 
 | Attribute | Detail |
 |-----------|--------|
@@ -62,7 +62,7 @@ The lab covers the complete vulnerability management lifecycle:
 
 ---
 
-## ⚙️ Methodology
+## Methodology
 
 A structured five-phase approach was followed, aligned to standard vulnerability management lifecycle practices:
 
@@ -118,7 +118,7 @@ A structured five-phase approach was followed, aligned to standard vulnerability
 
 ---
 
-## 🔧 Scan Configuration
+## Scan Configuration
 
 Key configuration elements for the Basic Network Scan:
 
@@ -143,12 +143,12 @@ Nessus Scan Templates Reviewed:
 
 > Supporting screenshots in the repository illustrate:
 > - The scan template selection screen
-> - The target configuration page showing defined scope
+> - The target configuration page showing the defined scope
 > - The detailed configuration tabs: General, Discovery, Port Scanning
 
 ---
 
-## 🚀 Scan Execution & Results
+## Scan Execution & Results
 
 Once the configuration was saved, the Basic Network Scan was executed against the lab host.
 
@@ -175,7 +175,7 @@ During and after execution, the Nessus dashboard displayed:
 
 ---
 
-## 📊 Findings Export & Structured Report
+## Findings Export & Structured Report
 
 After scan completion:
 
@@ -235,7 +235,7 @@ Vulnerabilities were prioritised based on:
 
 ---
 
-## 🔨 Remediation Handoff & Recommendations
+## Remediation Handoff & Recommendations
 
 The final deliverables were positioned as artefacts for the IT remediation team:
 
@@ -263,7 +263,7 @@ The final deliverables were positioned as artefacts for the IT remediation team:
 
 ---
 
-## 📈 Outcomes & Deliverables
+## Outcomes & Deliverables
 
 | Deliverable | Description |
 |-------------|-------------|
@@ -274,7 +274,7 @@ The final deliverables were positioned as artefacts for the IT remediation team:
 
 ---
 
-## 🔧 Tools & Technologies
+## Tools & Technologies
 
 ```
 Scanner          Nessus Essentials (cloud-connected)
@@ -289,7 +289,7 @@ Dashboard        Nessus Web UI (scan monitoring & results)
 
 ---
 
-## 🎓 Skills Demonstrated
+## Skills Demonstrated
 
 ![Vulnerability Assessment](https://img.shields.io/badge/Technical-Vulnerability%20Assessment-2ea44f?style=flat-square)
 ![Nessus](https://img.shields.io/badge/Tool-Nessus%20Essentials-2ea44f?style=flat-square)
