@@ -9,10 +9,7 @@
 
 A hands-on vulnerability assessment project using **Nessus Essentials** (cloud-connected) to identify, analyse, and prioritise security weaknesses on a lab network host. The engagement covers the complete end-to-end workflow: scope definition → scan configuration → execution → CSV export → risk-based prioritisation → remediation handoff.
 
-> *This lab simulates how a security analyst performs an initial vulnerability sweep on a new asset and generates actionable outputs for an IT remediation team.*
-
-> [!NOTE]
-> **Portfolio / Lab Project** — This assessment was performed in a controlled lab environment for educational and portfolio purposes only. No production systems or real-world customer data were scanned or impacted.
+This assessment was performed in a controlled lab environment for educational and portfolio purposes only. No production systems or real-world customer data were scanned or impacted.
 
 ---
 
