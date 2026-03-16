@@ -7,6 +7,8 @@
 ![Phases](https://img.shields.io/badge/Phases-5-6f42c1?style=flat-square)
 ![Environment](https://img.shields.io/badge/Environment-Controlled%20Lab-e36209?style=flat-square)
 
+An end-to-end vulnerability assessment lab engagement covering scope definition, scan policy configuration, authenticated results export, risk-based prioritisation, and a structured remediation handoff report.
+
 A hands-on vulnerability assessment project using **Nessus Essentials** (cloud-connected) to identify, analyse and prioritise security weaknesses on a lab network host. The engagement covers the complete end-to-end workflow: scope definition → scan configuration → execution → CSV export → risk-based prioritisation → remediation handoff.
 
 This assessment was performed in a controlled lab environment for educational and portfolio purposes only. No production systems or real-world customer data were scanned or impacted.
