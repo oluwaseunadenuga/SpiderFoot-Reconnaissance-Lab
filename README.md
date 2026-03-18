@@ -59,6 +59,8 @@ The lab covers the complete vulnerability management lifecycle:
 
 > The goal of this lab is to simulate how a security analyst performs an initial vulnerability sweep on a new asset and generates actionable outputs for remediation.
 
+<img width="940" height="363" alt="image" src="https://github.com/user-attachments/assets/307e3a6c-a8ab-496a-bc93-01eb8144deb6" />
+
 ---
 
 ## Methodology
@@ -66,7 +68,8 @@ The lab covers the complete vulnerability management lifecycle:
 A structured five-phase approach was followed, aligned to standard vulnerability management lifecycle practices:
 
 <details>
-<summary><strong>Phase 1 — Define Scope & Objectives</strong></summary>
+
+  <summary><strong>Phase 1 — Define Scope & Objectives</strong></summary>
 
 - Confirmed target IP/hostname; verified only the lab host was in scope
 - Agreed objective: identify network-level vulnerabilities and misconfigurations
@@ -75,7 +78,8 @@ A structured five-phase approach was followed, aligned to standard vulnerability
 </details>
 
 <details>
-<summary><strong>Phase 2 — Select & Configure Scan Template</strong></summary>
+
+  <summary><strong>Phase 2 — Select & Configure Scan Template</strong></summary>
 
 - Created a new **Basic Network Scan** in Nessus Essentials
 - Reviewed three available scan types:
@@ -84,6 +88,11 @@ A structured five-phase approach was followed, aligned to standard vulnerability
   - Web Application Scan
 - Configured: general settings (name, description, target IP), port scanning (default TCP range), service detection, and performance options appropriate for a lab environment
 
+<img width="940" height="389" alt="image" src="https://github.com/user-attachments/assets/5d46363c-d01a-4015-b916-07a3b9b2f263" />
+
+<img width="940" height="383" alt="image" src="https://github.com/user-attachments/assets/d72da181-57c2-4798-8961-f0f0785d92e6" />
+
+
 </details>
 
 <details>
@@ -91,7 +100,7 @@ A structured five-phase approach was followed, aligned to standard vulnerability
 
 - Launched the scan and monitored real-time progress from the Nessus dashboard
 - Verified: successful scan completion, host discovery, vulnerability population
-- Reviewed drill-down views showing per-plugin details, affected port, and impacted host
+- Reviewed drill-down views showing per-plugin details, affected port and impacted host
 
 </details>
 
@@ -107,7 +116,7 @@ A structured five-phase approach was followed, aligned to standard vulnerability
 </details>
 
 <details>
-<summary><strong>Phase 5 — Prioritise & Prepare Remediation Report</strong></summary>
+<summary><strong>Phase 5 — Prioritise vulnerabilities & Prepare Remediation Report</strong></summary>
 
 - Grouped findings by severity and potential business impact
 - Highlighted **Critical** and **High** severity issues first (e.g. RCE, weak encryption, outdated services)
@@ -145,6 +154,9 @@ Nessus Scan Templates Reviewed:
 > - The target configuration page showing the defined scope
 > - The detailed configuration tabs: General, Discovery, Port Scanning
 
+<img width="940" height="388" alt="image" src="https://github.com/user-attachments/assets/bde92179-47c9-41c6-9b65-c176974e767c" />
+<img width="940" height="385" alt="image" src="https://github.com/user-attachments/assets/97f77f25-c676-49f0-bbc7-e99184ebb877" />
+
 ---
 
 ## Scan Execution & Results
@@ -172,6 +184,11 @@ During and after execution, the Nessus dashboard displayed:
 > - The vulnerability summary chart by severity
 > - Example detailed finding views for individual plugins
 
+<img width="940" height="496" alt="image" src="https://github.com/user-attachments/assets/86aa4814-d310-400b-bd5f-d7c9968996b3" />
+<img width="940" height="503" alt="image" src="https://github.com/user-attachments/assets/60a974b5-e201-47bc-9baf-e1ec037e5753" />
+<img width="940" height="498" alt="image" src="https://github.com/user-attachments/assets/b650db53-0c70-41f7-bc9c-6c501141b38c" />
+<img width="940" height="487" alt="image" src="https://github.com/user-attachments/assets/e8eb701c-4d33-46e1-8868-43adf2d78722" />
+
 ---
 
 ## Findings Export & Structured Report
@@ -191,19 +208,14 @@ The CSV was imported into a spreadsheet to:
 - Filter out informational findings (optional)
 - Sort and group by severity and asset
 
-### 3. Sample Structured Findings
+### 3. Prioritised vulnerability view
+ - A dedicated view/report was created to focus on:
+ - Critical and High vulnerabilities first.
+ - Medium/Low issues grouped by category (e.g. configuration hardening, informational).
+- The screenshots in this section show the structured CSV displayed in tabular form and the prioritised vulnerability list derived from it.
 
-| Plugin ID | Vulnerability | Severity | Port | CVE | Synopsis |
-|-----------|--------------|----------|------|-----|----------|
-| `34477` | MS08-067 NetAPI RCE | 🔴 Critical | 445/TCP | CVE-2008-4250 | Unpatched SMB allows unauthenticated RCE |
-| `21156` | UnrealIRCd Backdoor RCE | 🔴 Critical | 6667/TCP | CVE-2010-2075 | Trojanised IRC server allows arbitrary command execution |
-| `65821` | SSL/TLS POODLE Vulnerability | 🟠 High | 443/TCP | CVE-2014-3566 | SSLv3 enabled — POODLE padding oracle attack |
-| `78479` | OpenSSH Outdated Version | 🟠 High | 22/TCP | CVE-2023-38408 | Running version affected by multiple CVEs |
-| `10254` | Apache httpd Outdated Version | 🟠 High | 80/TCP | CVE-2022-31813 | Missing security patches for known vulnerabilities |
-| `44401` | FTP Anonymous Access Enabled | 🔵 Medium | 21/TCP | — | Anonymous FTP login permitted — data exposure risk |
-| `11219` | Open Port Disclosure | 🟢 Low | Various | — | Informational — open port enumeration result |
-
-> 📁 Full structured findings available in [`findings.csv`](./findings.csv)
+<img width="940" height="336" alt="image" src="https://github.com/user-attachments/assets/482f72fd-83a9-4fc7-b234-d273af8ad9b0" />
+<img width="940" height="407" alt="image" src="https://github.com/user-attachments/assets/77aa7678-e516-4e54-ac9d-982c263515d8" />
 
 ---
 
@@ -229,38 +241,22 @@ Vulnerabilities were prioritised based on:
 **🟢 Low / Informational — Routine**
 > Minor findings, limited exploitability. Address as part of ongoing security hygiene and hardening cycles.
 
-> [!WARNING]
-> **Critical Priority** — The MS08-067 (SMB RCE) and UnrealIRCd backdoor findings represent immediate, unauthenticated remote code execution vulnerabilities. These must be remediated before the host is connected to any shared network segment.
+<img width="940" height="475" alt="image" src="https://github.com/user-attachments/assets/63dad99a-02ea-4fc9-b13f-0571edc0fb26" />
 
 ---
 
 ## Remediation Handoff & Recommendations
 
 The final deliverables were positioned as artefacts for the IT remediation team:
+- A structured CSV of all findings, ready for ingestion into a ticketing or tracking system.
+- A prioritised vulnerability report highlighting the most critical issues and recommended order of remediation.
+These outputs were positioned as artefacts for an IT remediation team to:
+- Patch vulnerable services.
+- Harden configurations.
+- Disable unnecessary or legacy protocols.
 
-### Immediate (Critical)
-- Apply **MS08-067** security patch (KB958644) to address SMB RCE
-- Remove or replace the **trojanised UnrealIRCd** service
-- Firewall port 6667 pending service replacement
+This lab demonstrates the full workflow from scan configuration through to analysis and handoff, reflecting how a security analyst would operate in a real world vulnerability management process.
 
-### Urgent (High)
-- Disable **SSLv3** across all services; enforce TLS 1.2 minimum
-- Upgrade **OpenSSH** to the current stable release
-- Apply all outstanding **Apache httpd** security patches
-- Audit all services for deprecated or unencrypted protocol exposure
-
-### Scheduled (Medium)
-- Disable **anonymous FTP** access
-- Review and disable unnecessary services running on non-standard ports
-- Apply **CIS Benchmark** hardening to the host OS
-- Firewall unused services: Telnet, rlogin, distccd
-
-### Ongoing (Low / Hygiene)
-- Document full open port inventory
-- Schedule follow-up **credentialed scan** post-remediation to validate patch effectiveness
-- Implement recurring vulnerability scanning schedule (monthly recommended)
-
----
 
 ## Outcomes & Deliverables
 
