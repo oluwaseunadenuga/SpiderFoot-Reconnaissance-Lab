@@ -245,27 +245,16 @@ Vulnerabilities were prioritised based on:
 
 ---
 
-## Remediation Handoff & Recommendations
-
-The final deliverables were positioned as artefacts for the IT remediation team:
-- A structured CSV of all findings, ready for ingestion into a ticketing or tracking system.
-- A prioritised vulnerability report highlighting the most critical issues and recommended order of remediation.
-These outputs were positioned as artefacts for an IT remediation team to:
-- Patch vulnerable services.
-- Harden configurations.
-- Disable unnecessary or legacy protocols.
-
-This lab demonstrates the full workflow from scan configuration through to analysis and handoff, reflecting how a security analyst would operate in a real world vulnerability management process.
-
-
 ## Outcomes & Deliverables
 
 | Deliverable | Description |
 |-------------|-------------|
 | **Structured CSV Export** | Normalised Nessus findings — Plugin ID, Severity, Host, Port, Protocol, Name, Synopsis, Solution, Plugin Family |
 | **Prioritised Vulnerability Report** | Risk-sorted findings report with Critical/High issues first, Medium/Low grouped by category |
-| **Scan Configuration Documentation** | Documented scan policy, template selection rationale, and configuration settings |
+| **Scan Configuration Documentation** | Documented scan policy, template selection rationale and configuration settings |
 | **Remediation Recommendations** | Actionable, severity-ordered remediation steps with patch references and hardening guidance |
+
+This lab demonstrates the full workflow from scan configuration through to analysis and handoff, reflecting how a security analyst would operate in a real world vulnerability management process.
 
 ---
 
