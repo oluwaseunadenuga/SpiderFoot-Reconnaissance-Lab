@@ -288,26 +288,6 @@ Dashboard        Nessus Web UI (scan monitoring & results)
 
 ---
 
-## 📂 Repository Structure
-
-```
-📁 Vulnerability-Assessment-Nessus-Essentials/
-│
-├── README.md                          ← This file
-├── findings.csv                       ← Full Nessus CSV export (normalised)
-├── Prioritised-Vulnerability-Report.xlsx  ← Sorted findings by severity
-├── Scan-Configuration-Notes.md        ← Documented scan policy & settings
-├── Remediation-Handoff-Report.pdf     ← Formatted report for IT team
-└── screenshots/
-    ├── 01-scan-templates.png          ← Template selection screen
-    ├── 02-scan-config.png             ← Target & general configuration
-    ├── 03-port-settings.png           ← Port scanning configuration
-    ├── 04-scan-running.png            ← Scan execution dashboard
-    ├── 05-scan-completed.png          ← Completed scan with summary
-    ├── 06-csv-export.png              ← Structured CSV in spreadsheet
-    └── 07-priority-report.png         ← Prioritised vulnerability view
-```
-
 ---
 
 ## 📬 Contact
